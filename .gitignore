@@ -1,0 +1,3 @@
+#file con estensione .class che dipende dalla versione di compilazione java
+
+*.class
