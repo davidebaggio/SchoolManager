@@ -21,6 +21,14 @@ public class CSVWriter {
 		csv.writeParsed(str);
 	}
 
+	public void writeParsedSingleEntity(String[] entity) throws IOException {
+		FileWriter fw = new FileWriter(CSVWriter, true);
+		fw.append("\n");
+		fw.append(String.join(",", entity));
+		fw.flush();
+		fw.close();
+	}
+
 	public void writeParsed(ArrayList<String[]> rawData) throws IOException {
 		FileWriter fw = new FileWriter(CSVWriter, true);
 		for (String[] s : rawData) {
