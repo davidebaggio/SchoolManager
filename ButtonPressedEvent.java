@@ -3,20 +3,22 @@ import java.awt.event.*;
 
 public class ButtonPressedEvent implements ActionListener {
 
+	private GUI mainGui;
 	private GUI gui;
 
-	public ButtonPressedEvent(GUI gui) {
+	public ButtonPressedEvent(GUI mainGui, GUI gui) {
+		this.mainGui = mainGui;
 		this.gui = gui;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (!gui.getAccountLogged()) {
-			gui.setAccountLogged(true);
+		if (!mainGui.getAccountLogged()) {
+			mainGui.setAccountLogged(true);
 			Label l = new Label("Logged in!");
 			gui.add(l);
 		} else {
-			gui.setAccountLogged(false);
+			mainGui.setAccountLogged(false);
 			Label l = new Label("Logged out!");
 			gui.add(l);
 		}

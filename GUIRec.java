@@ -36,7 +36,8 @@ public class GUIRec extends Frame {
 	}
 
 	public void recordEntityGUI() {
-
+		TextField t = new TextField("Ciao", 30);
+		this.add(t);
 	}
 
 }

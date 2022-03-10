@@ -12,10 +12,6 @@ public class GUI extends Frame {
 	private Menu schoolInfoMenu;
 	private Menu registerEntityMenu;
 
-	public static void main(String[] args) {
-		new GUI(true, 800, 450, false);
-	}
-
 	public GUI(boolean isMainGUI, int width, int height, boolean logged) {
 
 		this.accountLogged = logged;
@@ -68,7 +64,7 @@ public class GUI extends Frame {
 
 		schoolInfoMenu = new Menu("|School Info|");
 		schoolInfoMenu.add(new MenuItem("Info"));
-		schoolInfoMenu.getItem(0).addActionListener(new newGUIEvent());
+		schoolInfoMenu.getItem(0).addActionListener(new SchoolInfoEvent(this, new School()));
 
 		registerEntityMenu = new Menu("|Register Entity|");
 		registerEntityMenu.add(new MenuItem("Register Student"));
